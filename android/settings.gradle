@@ -1,0 +1,3 @@
+rootProject.name = 'Reactive2015'
+
+include ':app'
