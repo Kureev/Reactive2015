@@ -8,6 +8,6 @@ module.exports = {
   },
 
   header: {
-    backgroundColor: '#0f1726',
+    backgroundColor: '#212739',
   },
 };

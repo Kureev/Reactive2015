@@ -24,7 +24,7 @@ const styles = {
   },
 
   content: {
-    paddingTop: 45,
+    paddingTop: 50,
     paddingLeft: 20,
   },
 

@@ -13,19 +13,19 @@ const {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+
+  header: {
+    ...theme.header,
+    height: 50,
   },
-  instructions: {
+
+  caption: {
+    color: '#fff',
+    flex: 1,
+    paddingTop: 25,
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
 
@@ -37,7 +37,9 @@ const Reactive2015 = React.createClass({
     return (
       <SideMenu menu={menu}>
         <View style={styles.container}>
-          <Text>Hello, yopta</Text>
+          <View style={styles.header}>
+            <Text style={styles.caption}>FIRST DAY</Text>
+          </View>
         </View>
       </SideMenu>
     );
