@@ -1,7 +1,11 @@
 const theme = require('./components/theme');
 const Menu = require('./components/Menu');
+const TabBar = require('./components/TabBar');
 const SideMenu = require('react-native-side-menu');
+const ScrollableTabs = require('react-native-scrollable-tab-view');
+const Schedule = require('./components/Schedule');
 const React = require('react-native');
+const { day1, day2, workshop } = require('./data');
 const {
   AppRegistry,
   StyleSheet,
@@ -18,30 +22,30 @@ const styles = StyleSheet.create({
 
   header: {
     ...theme.header,
-    height: 50,
+    height: 65,
   },
 
   caption: {
     color: '#fff',
     flex: 1,
-    paddingTop: 25,
+    paddingTop: 35,
     textAlign: 'center',
   },
 });
 
 const Reactive2015 = React.createClass({
   render() {
-    StatusBarIOS.setStyle('light-content');
-    const menu = <Menu />;
+    StatusBarIOS.setStyle('default');
 
     return (
-      <SideMenu menu={menu}>
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.caption}>FIRST DAY</Text>
-          </View>
-        </View>
-      </SideMenu>
+      <View style={{ flex: 1, }}>
+        <View style={styles.header}></View>
+        <ScrollableTabs edgeHitWidth={100} renderTabBar={() => <TabBar />}>
+          <Schedule data={workshop} tabLabel="Workshop" />
+          <Schedule data={day1} tabLabel="Day 1" />
+          <Schedule data={day2} tabLabel="Day 2" />
+        </ScrollableTabs>
+      </View>
     );
   },
 });

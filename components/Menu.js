@@ -1,5 +1,4 @@
 const React = require('react-native');
-const { BlurView, VibrancyView } = require('react-native-blur');
 const theme = require('./theme');
 const {
   AppRegistry,
@@ -55,7 +54,7 @@ const styles = {
     width: 40,
     height: 40,
     marginLeft: -5,
-    tintColor: '#1bd982',
+    tintColor: theme.colors.accent,
   },
 
   logoContainer: {
@@ -70,7 +69,7 @@ module.exports = React.createClass({
     const logoImage = { uri: 'https://cdn.auth0.com/blog/react-js/react.png', };
 
     return (
-      <View style={{...styles.container, backgroundColor: '#212739', }}>
+      <View style={{...styles.container, backgroundColor: theme.colors.secondary, }}>
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image source={logoImage} style={styles.logo} />

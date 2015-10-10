@@ -8,6 +8,8 @@
   "dependencies": {
     "react-native": "^0.11.4",
     "react-native-blur": "^0.7.1",
+    "react-native-navbar": "^0.8.2",
+    "react-native-scrollable-tab-view": "brentvatne/react-native-scrollable-tab-view#master",
     "react-native-side-menu": "^0.14.2"
   }
 }
