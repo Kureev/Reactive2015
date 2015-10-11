@@ -45,6 +45,7 @@ module.exports = {
          'company': 'Formidable Labs',
          'category': 'react_everywhere',
          'avatar': 'https://reactive2015.com/assets/img/team/colin_megill.jpg',
+         'excerpt': 'We tried swapped out D3\'s DOM model in favor of React. The result? Love at first iteration. Building a data visualization library as React components means that you can reclaim your SVG as declarative markup, NPM install visualizations directly into your project (can\'t do that with bl.ocks!), fork them, remix them and file issues against them. It also meant completely rethinking how animations are done, since D3\'s animation model relies on its DOM model. Come learn the API, and what it means for the future of interactive data visualization.',
       }, {
 			'time': '11:15 – 11:45',
 			'title': 'Coffee Break',
@@ -97,6 +98,7 @@ module.exports = {
          'speaker': 'Paul Taylor',
          'company': 'Netflix',
          'category': 'data_flow',
+         'excerpt': 'Imagine how easy building your web application would be if all of your data was available in-memory on the client. Falcor lets you to code that way.\n\nFalcor is the open-source, JS data access framework that powers Netflix. Falcor lets you represent all of your cloud data sources as one virtual JSON model on the server. On the client, Falcor makes it appear as if the entire JSON model is available locally and allows you to access data the same way you would from an in-memory JSON object. Falcor retrieves the model data you request from the cloud on-demand, transparently handling all the network communication and keeping the server and client in sync.\n\nFalcor is not a replacement for your MVC framework, your database, or your application server. Falcor fits seamlessly into your existing stack and lets the layers communicate more efficiently.\n\nGet an inside look at the innovative data platform that powers the Netflix UIs and the new UI design patterns it enables. Learn more how Falcor powers Netflix, and how you can integrate into your existing stack.',
          'avatar': 'https://reactive2015.com/assets/img/team/paul_taylor.jpg',
 		}, {
 			'time': '16:45 – 17:15',

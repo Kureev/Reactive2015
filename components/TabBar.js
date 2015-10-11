@@ -24,11 +24,9 @@ const styles = {
   tabs: {
     height: 50,
     flexDirection: 'row',
-    borderWidth: 1,
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderBottomColor: '#ccc',
     backgroundColor: theme.colors.primary,
   },
 
