@@ -41,6 +41,7 @@ const styles = {
     color: theme.colors.lightText,
     fontWeight: '300',
     fontSize: 12,
+    paddingTop: 1,
   },
 };
 
@@ -60,8 +61,8 @@ module.exports = class ScheduleItem extends Component {
           {speaker}
           <View style={{ flex: 1, flexDirection: 'row', marginTop: 5, }}>
             <Image
-              source={require('image!clock104')}
-              style={{ width: 14, height: 14, marginRight: 5, }}/>
+              source={require('image!ios7-clock-outline')}
+              style={{ width: 18, height: 18, marginRight: 5, }}/>
             <Text style={styles.clock}>{this.props.time}</Text>
           </View>
         </View>

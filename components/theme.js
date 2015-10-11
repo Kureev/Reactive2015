@@ -26,4 +26,26 @@ module.exports = {
   header: {
     backgroundColor: '#283046',
   },
+
+  prevBtnContainer: {
+    height: 16,
+    width: 16,
+    justifyContent: 'center',
+    top: 36,
+    left: 15,
+  },
+
+  nextBtnContainer: {
+    height: 24,
+    width: 24,
+    justifyContent: 'center',
+    top: 36,
+    right: 15,
+  },
+
+  btn: {
+    height: 24,
+    width: 24,
+    tintColor: colors.accent,
+  },
 };
