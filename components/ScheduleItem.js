@@ -53,8 +53,14 @@ module.exports = class ScheduleItem extends Component {
       speaker = <Text style={styles.speaker}>{this.props.speaker}</Text>;
     }
 
+    const activeOpacity = this.props.category ? 0.5 : 1;
+    const onPress = this.props.excerpt ? this.props.onPress : () => {};
+
     return (
-      <TouchableOpacity style={styles.row} onPress={this.props.onPress}>
+      <TouchableOpacity
+        style={styles.row}
+        activeOpacity={activeOpacity}
+        onPress={onPress}>
         <Avatar src={this.props.avatar} category={this.props.category} />
         <View style={styles.info}>
           <Text style={styles.title}>{this.props.title}</Text>

@@ -8,6 +8,7 @@ const {
   Text,
   Image,
   TouchableOpacity,
+  SegmentedControlIOS,
 } = React;
 
 const styles = {
@@ -24,8 +25,28 @@ const styles = {
 };
 
 module.exports = class DetailsScreen extends Component {
+  constructor(props, ctx) {
+    super(props, ctx);
+
+    this.state = {
+      selected: 0,
+    };
+  }
+
+  switchTextContent(e) {
+    this.setState({
+      selected: e.nativeEvent.selectedSegmentIndex,
+    });
+  }
+
   render() {
     const { data } = this.props.route;
+
+    let content = <Text style={styles.text}>{data.excerpt}</Text>;
+
+    if (this.state.selected) {
+      content = <Text style={styles.text}>{data.bio}</Text>;
+    }
 
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
@@ -41,7 +62,12 @@ module.exports = class DetailsScreen extends Component {
         </View>
         <ScrollView>
           <ScheduleItem {...data} />
-          <Text style={styles.text}>{data.excerpt}</Text>
+          <SegmentedControlIOS
+            values={['Talk', 'Bio', ]}
+            selectedIndex={this.state.selected}
+            onChange={this.switchTextContent.bind(this)}
+            style={theme.segmented}/>
+          {content}
         </ScrollView>
       </View>
     );

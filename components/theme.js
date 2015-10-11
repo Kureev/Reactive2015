@@ -63,4 +63,11 @@ module.exports = {
     width: 28,
     tintColor: colors.accent,
   },
+
+  segmented: {
+    marginTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    tintColor: colors.accent,
+  },
 };
