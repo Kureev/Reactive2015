@@ -27,12 +27,12 @@ All screens are attached below (in case if you don't want to setup it on your ma
 
 ![image](https://habrastorage.org/files/8df/6f7/930/8df6f793095344e7930444855598fea0.png)
 
-## Filters screen
-[Direct link](https://habrastorage.org/files/5b5/8a0/71a/5b58a071a608472ab17a557fb8afd6cb.png)
-
-![image](https://habrastorage.org/files/5b5/8a0/71a/5b58a071a608472ab17a557fb8afd6cb.png)
-
 ## Talk screen
 [Direct link](https://habrastorage.org/files/10d/488/a95/10d488a952854d76b26299841b4f70c7.png)
 
 ![image](https://habrastorage.org/files/10d/488/a95/10d488a952854d76b26299841b4f70c7.png)
+
+## Filters screen
+[Direct link](https://habrastorage.org/files/5b5/8a0/71a/5b58a071a608472ab17a557fb8afd6cb.png)
+
+![image](https://habrastorage.org/files/5b5/8a0/71a/5b58a071a608472ab17a557fb8afd6cb.png)
