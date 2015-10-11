@@ -16,20 +16,6 @@ const {
   TouchableOpacity,
 } = React;
 
-const styles = {
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-
-  logo: {
-    width: 20,
-    height: 20,
-    tintColor: theme.colors.accent,
-  },
-};
-
-@connect(state => ({ state, }))
 class ScheduleScreen extends Component {
   openFiltersScreen() {
     this.props.navigator.push({
