@@ -2,7 +2,9 @@ const React = require('react-native');
 const ScheduleItem = require('../components/ScheduleItem');
 const MultiSelectList = require('../components/MultiSelectList');
 const theme = require('../components/theme');
+const { connect } = require('react-redux/native');
 const {
+  AsyncStorage,
   Component,
   View,
   Text,
@@ -17,25 +19,6 @@ const styles = {
     backgroundColor: '#fff',
   },
 
-  header: {
-    ...theme.header,
-    height: 70,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-  },
-
-  caption: {
-    color: theme.colors.accent,
-    flex: 1,
-    fontSize: 14,
-    paddingTop: 35,
-    textAlign: 'center',
-    alignItems: 'center',
-    left: 0,
-    right: 0,
-    position: 'absolute',
-  },
-
   text: {
     padding: 20,
     flex: 1,
@@ -43,9 +26,21 @@ const styles = {
   },
 };
 
-module.exports = class FilterScreen extends Component {
+@connect(state => ({ state, }))
+class FilterScreen extends Component {
+  updateFilter(changed) {
+    this.props.dispatch({
+      type: 'UPDATE_FILTER',
+      data: {
+        category: changed.category,
+        checked: changed.checked,
+      },
+    });
+  }
+
   render() {
-    const { data } = this.props.route;
+    const { state } = this.props;
+
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     });
@@ -53,31 +48,43 @@ module.exports = class FilterScreen extends Component {
     const filters = ds.cloneWithRows([
       {
         title: 'Data Flow',
+        category: 'data_flow',
         color: theme.colors.blue,
+        checked: state.data_flow,
       }, {
         title: 'Rethinking React',
+        category: 'rethinking_react',
         color: theme.colors.purple,
+        checked: state.rethinking_react,
       }, {
         title: 'React Everywhere',
+        category: 'react_everywhere',
         color: theme.colors.green,
+        checked: state.react_everywhere,
       }, {
         title: 'React General',
+        category: 'react_general',
         color: theme.colors.yellow,
+        checked: state.react_general,
       },
     ]);
 
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
-        <View style={styles.header}>
-          <Text ref={'title'} style={styles.caption}>FILTER SETTINGS</Text>
+        <View style={theme.header}>
+          <Text ref={'title'} style={theme.caption}>FILTER SETTINGS</Text>
           <TouchableOpacity
-            style={theme.prevBtnContainer}
+            style={[theme.prevBtnContainer, { left: 0, }, ]}
             onPress={() => this.props.navigator.pop()}>
-            <Image source={require('image!ios7-arrow-back')} style={theme.btn}/>
+            <Image
+              source={require('image!ios7-arrow-back')}
+              style={[theme.btn, { width: 36, height: 36, }, ]}/>
           </TouchableOpacity>
         </View>
-        <MultiSelectList data={filters}/>
+        <MultiSelectList data={filters} onChange={this.updateFilter.bind(this)}/>
       </View>
     );
   }
-};
+}
+
+module.exports = FilterScreen;

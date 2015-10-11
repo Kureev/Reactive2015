@@ -49,6 +49,12 @@ module.exports = class MultiSelectListItem extends Component {
     this.setState({
       checked: !this.state.checked,
     });
+
+    this.props.onPress({
+      index: this.props.index,
+      checked: !this.state.checked,
+      category: this.props.category,
+    });
   }
 
   render() {

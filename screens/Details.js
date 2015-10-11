@@ -16,25 +16,6 @@ const styles = {
     backgroundColor: '#fff',
   },
 
-  header: {
-    ...theme.header,
-    height: 70,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-  },
-
-  caption: {
-    color: theme.colors.accent,
-    flex: 1,
-    fontSize: 14,
-    paddingTop: 35,
-    textAlign: 'center',
-    alignItems: 'center',
-    left: 0,
-    right: 0,
-    position: 'absolute',
-  },
-
   text: {
     padding: 20,
     flex: 1,
@@ -48,10 +29,14 @@ module.exports = class DetailsScreen extends Component {
 
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
-        <View style={styles.header}>
-          <Text ref={'title'} style={styles.caption}>TALK DETAILS</Text>
-          <TouchableOpacity style={theme.prevBtnContainer} onPress={() => this.props.navigator.pop()}>
-            <Image source={require('image!ios7-arrow-back')} style={theme.btn}/>
+        <View style={theme.header}>
+          <Text ref={'title'} style={theme.caption}>TALK DETAILS</Text>
+          <TouchableOpacity
+            style={[theme.prevBtnContainer, { left: 0, }, ]}
+            onPress={() => this.props.navigator.pop()}>
+            <Image
+              source={require('image!ios7-arrow-back')}
+              style={[theme.btn, { width: 36, height: 36, }, ]}/>
           </TouchableOpacity>
         </View>
         <ScrollView>

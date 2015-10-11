@@ -24,28 +24,43 @@ module.exports = {
   },
 
   header: {
-    backgroundColor: '#283046',
+    backgroundColor: colors.primary,
+    height: 70,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+  },
+
+  caption: {
+    color: colors.accent,
+    flex: 1,
+    fontSize: 16,
+    paddingTop: 38,
+    textAlign: 'center',
+    alignItems: 'center',
+    left: 0,
+    right: 0,
+    position: 'absolute',
   },
 
   prevBtnContainer: {
-    height: 16,
-    width: 16,
+    height: 36,
+    width: 36,
+    top: 30,
+    left: 10,
     justifyContent: 'center',
-    top: 36,
-    left: 15,
   },
 
   nextBtnContainer: {
-    height: 24,
-    width: 24,
+    height: 36,
+    width: 36,
+    top: 30,
+    right: 10,
     justifyContent: 'center',
-    top: 36,
-    right: 15,
   },
 
   btn: {
-    height: 24,
-    width: 24,
+    height: 28,
+    width: 28,
     tintColor: colors.accent,
   },
 };

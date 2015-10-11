@@ -1,7 +1,8 @@
 const theme = require('./components/theme');
-const Menu = require('./components/Menu');
-const SideMenu = require('react-native-side-menu');
+const { createStore, applyMiddleware, bindActionCreators } = require('redux');
+const { Provider } = require('react-redux/native');
 const ScheduleScreen = require('./screens/Schedule');
+const filterReducer = require('./reducers/filter');
 const React = require('react-native');
 const {
   AppRegistry,
@@ -9,6 +10,8 @@ const {
   Component,
   Navigator,
 } = React;
+
+const store = createStore(filterReducer);
 
 class Reactive2015 extends Component {
   componentDidMount() {
@@ -28,11 +31,13 @@ class Reactive2015 extends Component {
 
   render() {
     return (
-      <Navigator
-        renderScene={this.renderScene}
-        initialRoute={{
-          component: ScheduleScreen,
-      }}/>
+      <Provider store={store}>
+        {() => (
+          <Navigator
+            renderScene={this.renderScene}
+            initialRoute={{ component: ScheduleScreen, }}/>
+        )}
+      </Provider>
     );
   }
 }

@@ -8,19 +8,16 @@ const {
 } = React;
 
 module.exports = class Schedule extends Component {
-  toggle(data) {
-    console.log(data);
-  }
-
   render() {
     return (
       <View style={{ flex: 1, }}>
         <ListView
           dataSource={this.props.data}
-          renderRow={(rowData) =>
+          renderRow={(rowData, sectionID, rowID) =>
             <MultiSelectListItem
               {...rowData}
-              onPress={() => this.toggle(rowData)} />
+              index={rowID}
+              onPress={this.props.onChange} />
           } />
       </View>
     );

@@ -3,13 +3,15 @@ const Avatar = require('./Avatar');
 const ScheduleItem = require('./ScheduleItem');
 const DetailsScreen = require('../screens/Details');
 const theme = require('./theme');
+const { connect } = require('react-redux/native');
 const {
   Component,
   ListView,
   View,
 } = React;
 
-module.exports = class Schedule extends Component {
+@connect(state => ({ state, }))
+class Schedule extends Component {
   navigate(data) {
     const { navigator } = this.props;
 
@@ -19,11 +21,22 @@ module.exports = class Schedule extends Component {
     });
   }
 
+  getDataSource() {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => true,
+    });
+    const filters = this.props.state;
+
+    return ds.cloneWithRows(
+      this.props.data.filter((talk) => !talk.category || filters[talk.category])
+    );
+  }
+
   render() {
     return (
       <View style={{ flex: 1, }}>
         <ListView
-          dataSource={this.props.data}
+          dataSource={this.getDataSource()}
           renderRow={(rowData) =>
             <ScheduleItem
               {...rowData}
@@ -32,4 +45,6 @@ module.exports = class Schedule extends Component {
       </View>
     );
   }
-};
+}
+
+module.exports = Schedule;

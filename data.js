@@ -1,12 +1,5 @@
-const React = require('react-native');
-const {ListView, } = React;
-
-const ds = new ListView.DataSource({
-  rowHasChanged: (r1, r2) => r1 !== r2,
-});
-
 module.exports = {
-  workshop: ds.cloneWithRows([
+  workshop: [
     {
       'time': '8:00 – 9:00',
       'title': 'DOORS OPEN & Registration',
@@ -15,8 +8,8 @@ module.exports = {
       'title': 'WORKSHOPS',
       'speaker': 'React technologies',
     },
-  ]),
-  day1: ds.cloneWithRows([
+  ],
+  day1: [
     {
       'time': '8:00 – 9:00',
       'title': 'DOORS OPEN & Registration',
@@ -32,6 +25,7 @@ module.exports = {
       'twitter': 'http://twitter.com/jlongster',
       'github': 'http://github.com/jlongster',
       'web': 'https://jlongster.com/',
+      'category': 'react_general',
       'avatar': 'https://reactive2015.com/assets/img/team/james_long.jpg',
     }, {
       'time': '9:45 – 10:45',
@@ -173,9 +167,9 @@ module.exports = {
       'time': '19:30',
       'title': 'Door Closing',
     },
-  ]),
+  ],
 
-  day2: ds.cloneWithRows([
+  day2: [
     {
       'time': '8:30–9:00',
       'title': 'Doors Open',
@@ -226,7 +220,7 @@ module.exports = {
       'bio': 'Andreas is a full-stack, product-driven Software Engineer who enjoys building interactive single page applications with rich data visualisations. He is currently engineering things at Twitter and enjoys working on and contributing to open source projects such as d3act for using d3 with React and Radium for better inline style management in React apps. In his spare time, Andreas helps female graduates to learn to code as a Mentor/Lead Instructor for Code First: Girls.',
       'twitter': 'http://twitter.com/andrs',
       'github': 'http://github.com/AnSavvides',
-      'web': 'https://ansavvides.github.io/', 
+      'web': 'https://ansavvides.github.io/',
       'avatar': 'https://reactive2015.com/assets/img/team/andreas_savvides.jpg',
     }, {
       'time': '11:45–12:15',
@@ -339,5 +333,5 @@ module.exports = {
       'time': '19:00',
       'title': 'Door Closing',
     },
-  ]),
+  ],
 };
