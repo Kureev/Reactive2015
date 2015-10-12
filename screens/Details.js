@@ -37,9 +37,11 @@ module.exports = class DetailsScreen extends Component {
 
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
-      this.setState({
-        renderPlaceholderOnly: false,
-      });
+      requestAnimationFrame(() =>
+        this.setState({
+          renderPlaceholderOnly: false,
+        })
+      );
     });
   }
 

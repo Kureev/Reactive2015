@@ -8,6 +8,10 @@ const {
 } = React;
 
 module.exports = class Schedule extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <View style={{ flex: 1, }}>

@@ -48,9 +48,11 @@ class FilterScreen extends Component {
 
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
-      this.setState({
-        renderPlaceholderOnly: false,
-      });
+      requestAnimationFrame(() =>
+        this.setState({
+          renderPlaceholderOnly: false,
+        })
+      );
     });
   }
 

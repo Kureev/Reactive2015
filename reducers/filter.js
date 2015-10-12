@@ -8,16 +8,9 @@ const initialState = {
 module.exports = function counter(state = initialState, action = {}) {
   switch (action.type) {
     case 'UPDATE_FILTER':
-      const patch = {};
-      Object.defineProperty(patch, action.data.category, {
-        value: action.data.checked,
-        enumerable: true,
-      });
-
-      return {
-        ...state,
-        ...patch,
-      };
+      const patched = {...state, };
+      patched[action.data.category] = action.data.checked;
+      return patched;
     default:
       return state;
   }

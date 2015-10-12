@@ -23,6 +23,10 @@ class ScheduleScreen extends Component {
     });
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <View style={{ flex: 1, }}>

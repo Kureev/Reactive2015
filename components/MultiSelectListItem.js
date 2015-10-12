@@ -8,6 +8,7 @@ const {
   Text,
   Image,
   TouchableOpacity,
+  InteractionManager,
 } = React;
 
 const styles = {
@@ -37,6 +38,9 @@ const styles = {
   },
 };
 
+const checked = require('image!ios7-checkmark');
+const unchecked = require('image!ios7-checkmark-outline');
+
 module.exports = class MultiSelectListItem extends Component {
   constructor(props) {
     super(props);
@@ -58,9 +62,7 @@ module.exports = class MultiSelectListItem extends Component {
   }
 
   render() {
-    const stateIcon = this.state.checked ?
-      require('image!ios7-checkmark') :
-      require('image!ios7-checkmark-outline');
+    const stateIcon = this.state.checked ? checked : unchecked;
 
     return (
       <TouchableOpacity
