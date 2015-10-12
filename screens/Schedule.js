@@ -17,6 +17,11 @@ const {
 } = React;
 
 class ScheduleScreen extends Component {
+  constructor(props, ctx) {
+    super(props, ctx);
+    this.openFiltersScreen = this.openFiltersScreen.bind(this);
+  }
+
   openFiltersScreen() {
     this.props.navigator.push({
       component: FilterScreen,
@@ -34,7 +39,7 @@ class ScheduleScreen extends Component {
           <Text ref={'title'} style={theme.caption}>SCHEDULE</Text>
           <View style={theme.prevBtnContainer}></View>
           <TouchableOpacity
-            onPress={this.openFiltersScreen.bind(this)}
+            onPress={this.openFiltersScreen}
             style={theme.nextBtnContainer}>
               <Image source={require('image!ios7-settings-strong')} style={theme.btn}/>
           </TouchableOpacity>
