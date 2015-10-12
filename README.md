@@ -28,9 +28,9 @@ All screens are attached below (in case if you don't want to setup it on your ma
 ![image](https://habrastorage.org/files/8df/6f7/930/8df6f793095344e7930444855598fea0.png)
 
 ## Talk screen
-[Direct link](https://habrastorage.org/files/10d/488/a95/10d488a952854d76b26299841b4f70c7.png)
+[Direct link](https://habrastorage.org/files/565/4c2/2db/5654c22db92c44518c9e12cc9ea37763.png)
 
-![image](https://habrastorage.org/files/10d/488/a95/10d488a952854d76b26299841b4f70c7.png)
+![image](https://habrastorage.org/files/565/4c2/2db/5654c22db92c44518c9e12cc9ea37763.png)
 
 ## Profile screen
 [Direct link](https://habrastorage.org/files/87b/134/902/87b1349028514bab80a5cb115a7215de.png)
