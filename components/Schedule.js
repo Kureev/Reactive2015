@@ -26,17 +26,19 @@ function makeDataSource(data, filters) {
 class Schedule extends Component {
   constructor(props, ctx) {
     super(props, ctx);
+
     const update = this.forceUpdate.bind(this);
     this.forceUpdate = debounce(() => {
       InteractionManager.runAfterInteractions(update);
-    }, 1000);
+    }, 500);
+
     this.state = {
       ds: makeDataSource(props.data, props.state),
     };
   }
 
   navigate(data) {
-    const { navigator } = this.props;
+    const { navigator, route } = this.props;
 
     navigator.push({
       component: DetailsScreen,

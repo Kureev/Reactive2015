@@ -51,7 +51,7 @@ function getBorderColor(category) {
 module.exports = class Avatar extends Component {
   render() {
     let avatar = <Image
-      source={{ uri: 'https://cdn.auth0.com/blog/react-js/react.png', }}
+      source={require('image!react')}
       style={styles.avatarMock}/>;
 
     if (this.props.src) {

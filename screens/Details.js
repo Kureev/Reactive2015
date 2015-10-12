@@ -10,6 +10,7 @@ const {
   TouchableOpacity,
   SegmentedControlIOS,
   InteractionManager,
+  LinkingIOS,
 } = React;
 
 const styles = {
@@ -57,7 +58,25 @@ module.exports = class DetailsScreen extends Component {
     let content = <Text style={styles.text}>{data.excerpt}</Text>;
 
     if (this.state.selected) {
-      content = <Text style={styles.text}>{data.bio}</Text>;
+      const github = data.github ?
+        <TouchableOpacity onPress={() => LinkingIOS.openURL(data.github)}>
+          <Image source={require('image!social-github')} style={theme.social} />
+        </TouchableOpacity> : null;
+
+      const twitter = data.twitter ?
+        <TouchableOpacity onPress={() => LinkingIOS.openURL(data.twitter)}>
+          <Image source={require('image!social-twitter')} style={theme.social} />
+        </TouchableOpacity> : null;
+
+      content = (
+        <View>
+          <Text style={styles.text}>{data.bio}</Text>
+          <View style={{ flexDirection: 'row', alignSelf: 'center', paddingBottom: 20, }}>
+            {github}
+            {twitter}
+          </View>
+        </View>
+      );
     }
 
     if (this.state.renderPlaceholderOnly) {
