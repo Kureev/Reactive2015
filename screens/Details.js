@@ -1,5 +1,6 @@
 const React = require('react-native');
 const ScheduleItem = require('../components/ScheduleItem');
+const Profile = require('../components/Profile');
 const theme = require('../components/theme');
 const {
   Component,
@@ -12,19 +13,6 @@ const {
   InteractionManager,
   LinkingIOS,
 } = React;
-
-const styles = {
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-
-  text: {
-    padding: 20,
-    flex: 1,
-    color: theme.colors.lightText,
-  },
-};
 
 module.exports = class DetailsScreen extends Component {
   constructor(props, ctx) {
@@ -55,30 +43,6 @@ module.exports = class DetailsScreen extends Component {
   render() {
     const { data } = this.props.route;
 
-    let content = <Text style={styles.text}>{data.excerpt}</Text>;
-
-    if (this.state.selected) {
-      const github = data.github ?
-        <TouchableOpacity onPress={() => LinkingIOS.openURL(data.github)}>
-          <Image source={require('image!social-github')} style={theme.social} />
-        </TouchableOpacity> : null;
-
-      const twitter = data.twitter ?
-        <TouchableOpacity onPress={() => LinkingIOS.openURL(data.twitter)}>
-          <Image source={require('image!social-twitter')} style={theme.social} />
-        </TouchableOpacity> : null;
-
-      content = (
-        <View>
-          <Text style={styles.text}>{data.bio}</Text>
-          <View style={{ flexDirection: 'row', alignSelf: 'center', paddingBottom: 20, }}>
-            {github}
-            {twitter}
-          </View>
-        </View>
-      );
-    }
-
     if (this.state.renderPlaceholderOnly) {
       return (
         <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
@@ -86,6 +50,13 @@ module.exports = class DetailsScreen extends Component {
         </View>
       );
     }
+
+    const content = this.state.selected ?
+      <Profile {...data} /> :
+      <View>
+        <Text style={theme.title}>Overview:</Text>
+        <Text style={theme.textBlock}>{data.excerpt}</Text>
+      </View>;
 
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
@@ -102,7 +73,7 @@ module.exports = class DetailsScreen extends Component {
         <ScrollView>
           <ScheduleItem {...data} />
           <SegmentedControlIOS
-            values={['Talk', 'Bio', ]}
+            values={['Talk', 'Profile', ]}
             selectedIndex={this.state.selected}
             onChange={this.switchTextContent.bind(this)}
             style={theme.segmented}/>

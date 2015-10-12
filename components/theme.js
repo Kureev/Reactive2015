@@ -30,6 +30,20 @@ module.exports = {
     flexDirection: 'row',
   },
 
+  title: {
+    fontWeight: '500',
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingBottom: 2,
+  },
+
+  textBlock: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    flex: 1,
+    color: colors.lightText,
+  },
+
   caption: {
     color: colors.accent,
     flex: 1,
@@ -74,7 +88,12 @@ module.exports = {
   social: {
     width: 32,
     height: 32,
-    marginLeft: 10,
-    marginRight: 10,
+  },
+
+  socialContainer: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    marginTop: 20,
+    marginBottom: 20,
   },
 };
