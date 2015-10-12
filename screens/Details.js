@@ -9,6 +9,7 @@ const {
   Image,
   TouchableOpacity,
   SegmentedControlIOS,
+  InteractionManager,
 } = React;
 
 const styles = {
@@ -30,7 +31,16 @@ module.exports = class DetailsScreen extends Component {
 
     this.state = {
       selected: 0,
+      renderPlaceholderOnly: true,
     };
+  }
+
+  componentDidMount() {
+    InteractionManager.runAfterInteractions(() => {
+      this.setState({
+        renderPlaceholderOnly: false,
+      });
+    });
   }
 
   switchTextContent(e) {
@@ -46,6 +56,14 @@ module.exports = class DetailsScreen extends Component {
 
     if (this.state.selected) {
       content = <Text style={styles.text}>{data.bio}</Text>;
+    }
+
+    if (this.state.renderPlaceholderOnly) {
+      return (
+        <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
+          <View style={theme.header}></View>
+        </View>
+      );
     }
 
     return (

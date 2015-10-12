@@ -11,6 +11,7 @@ const {
   Image,
   ListView,
   TouchableOpacity,
+  InteractionManager,
 } = React;
 
 const styles = {
@@ -28,6 +29,13 @@ const styles = {
 
 @connect(state => ({ state, }))
 class FilterScreen extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      renderPlaceholderOnly: true,
+    };
+  }
+
   updateFilter(changed) {
     this.props.dispatch({
       type: 'UPDATE_FILTER',
@@ -35,6 +43,14 @@ class FilterScreen extends Component {
         category: changed.category,
         checked: changed.checked,
       },
+    });
+  }
+
+  componentDidMount() {
+    InteractionManager.runAfterInteractions(() => {
+      this.setState({
+        renderPlaceholderOnly: false,
+      });
     });
   }
 
@@ -68,6 +84,14 @@ class FilterScreen extends Component {
         checked: state.react_general,
       },
     ]);
+
+    if (this.state.renderPlaceholderOnly) {
+      return (
+        <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
+          <View style={theme.header}></View>
+        </View>
+      );
+    }
 
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.white, }}>
