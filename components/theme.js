@@ -25,7 +25,7 @@ module.exports = {
 
   header: {
     backgroundColor: colors.primary,
-    height: 70,
+    height: 65,
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
@@ -34,7 +34,7 @@ module.exports = {
     color: colors.accent,
     flex: 1,
     fontSize: 16,
-    paddingTop: 38,
+    paddingTop: 34,
     textAlign: 'center',
     alignItems: 'center',
     left: 0,
@@ -45,7 +45,7 @@ module.exports = {
   prevBtnContainer: {
     height: 36,
     width: 36,
-    top: 30,
+    top: 26,
     left: 10,
     justifyContent: 'center',
   },
@@ -53,7 +53,7 @@ module.exports = {
   nextBtnContainer: {
     height: 36,
     width: 36,
-    top: 30,
+    top: 26,
     right: 10,
     justifyContent: 'center',
   },
