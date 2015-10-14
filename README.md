@@ -1,6 +1,10 @@
 # Reactive2015
 Reactive 2015 Conference contest app
 
+You can support me and this app by voting for it here: 
+https://github.com/brentvatne/react-native-newsletter/issues/5
+Thanks in advance :heart:
+
 ## Installation
 1) First of all download the code:
 ```bash
