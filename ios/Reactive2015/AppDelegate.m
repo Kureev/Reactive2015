@@ -51,6 +51,10 @@
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
 
+  UIView* launchScreenView = [[[NSBundle mainBundle] loadNibNamed:@"LaunchScreen" owner:self options:nil] objectAtIndex:0];
+  launchScreenView.frame = self.window.bounds;
+  rootView.loadingView = launchScreenView;
+  
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [[UIViewController alloc] init];
   rootViewController.view = rootView;
