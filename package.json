@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "debounce": "^1.0.0",
-    "react-native": "^0.11.4",
-    "react-native-blur": "^0.7.1",
-    "react-native-navbar": "^0.8.2",
+    "react-native": "^0.42.3",
+    "react-native-blur": "^2.0.0",
+    "react-native-navbar": "^1.6.3",
     "react-native-scrollable-tab-view": "brentvatne/react-native-scrollable-tab-view#master",
-    "react-native-side-menu": "^0.14.2",
-    "react-redux": "^3.1.0",
+    "react-native-side-menu": "^0.20.1",
+    "react-redux": "^5.0.3",
     "redux": "^3.0.2"
   }
 }
