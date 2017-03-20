@@ -1,4 +1,6 @@
 # Reactive2015
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kureev/Reactive2015.svg)](https://greenkeeper.io/)
 Reactive 2015 Conference contest app
 
 You can support me and this app by voting for it here: 
